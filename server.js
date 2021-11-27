@@ -25,6 +25,11 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+let resObj={};
+app.get("/api/whoami", function (req, res) {
+  resObj['ipaddress']=  req.connection.remoteAddress;
+  res.json(resObj);
+});
 
 
 // listen for requests :)
