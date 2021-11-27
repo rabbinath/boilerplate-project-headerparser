@@ -27,7 +27,7 @@ app.get("/api/hello", function (req, res) {
 
 let resObj={};
 app.get("/api/whoami", function (req, res) {
-  resObj['ipaddress']=  req.connection.remoteAddress;
+  resObj['ipaddress']=  req.remoteAddress;
   res.json(resObj);
 });
 
