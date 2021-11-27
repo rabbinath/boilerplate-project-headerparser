@@ -28,6 +28,8 @@ app.get("/api/hello", function (req, res) {
 let resObj={};
 app.get("/api/whoami", function (req, res) {
   resObj['ipaddress']=  req.connection.remoteAddress;
+   resObj['language']=  req.headers["accept-language"];
+  resObj['software']=  req.headers['user-agent'];
   res.json(resObj);
 });
 
